@@ -5,6 +5,8 @@
 [![Crates.io](https://img.shields.io/crates/d/pg-embed)](http://crates.io/crates/pg-embed)
 [![Crates.io](https://img.shields.io/crates/l/pg-embed)](https://github.com/faokunega/pg-embed/blob/master/LICENSE)
 
+Fork note: This is main (commit 72db5e0) plus pull requests [Add suport for postgres v16](https://github.com/faokunega/pg-embed/pull/34) and [feat: remove usage of archive-rs](https://github.com/faokunega/pg-embed/pull/29) merged.
+
 Run a Postgresql database locally on Linux, MacOS or Windows as part of another Rust application or test.
 
 The currently supported async runtime for **pg-embed** is [tokio](https://crates.io/crates/tokio).
