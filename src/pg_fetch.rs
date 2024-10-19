@@ -16,27 +16,30 @@ use crate::pg_types::PgResult;
 /// Postgresql version struct (simple version wrapper)
 #[derive(Debug, Copy, Clone)]
 pub struct PostgresVersion(pub &'static str);
+// You can find the latest versions here:
+// https://repo1.maven.org/maven2/io/zonky/test/postgres/embedded-postgres-binaries-linux-amd64/
+pub const PG_V17: PostgresVersion = PostgresVersion("17.0.0");
 /// Latest postgres version 16
-pub const PG_V16: PostgresVersion = PostgresVersion("16.2.0");
+pub const PG_V16: PostgresVersion = PostgresVersion("16.4.0");
 /// Latest postgres version 15
-pub const PG_V15: PostgresVersion = PostgresVersion("15.3.0");
+pub const PG_V15: PostgresVersion = PostgresVersion("15.8.0");
 /// Latest postgres version 14
-pub const PG_V14: PostgresVersion = PostgresVersion("14.8.0");
+pub const PG_V14: PostgresVersion = PostgresVersion("14.9.0");
 /// Latest postgres version 13
-pub const PG_V13: PostgresVersion = PostgresVersion("13.6.0");
+pub const PG_V13: PostgresVersion = PostgresVersion("13.9.0");
 /// Latest postgres version 12
-pub const PG_V12: PostgresVersion = PostgresVersion("12.10.0");
-/// Latest pstgres version 11
-pub const PG_V11: PostgresVersion = PostgresVersion("11.15.0");
+pub const PG_V12: PostgresVersion = PostgresVersion("12.20.0");
+/// Latest postgres version 11
+pub const PG_V11: PostgresVersion = PostgresVersion("11.22.1");
 /// Latest postgres version 10
-pub const PG_V10: PostgresVersion = PostgresVersion("10.20.0");
+pub const PG_V10: PostgresVersion = PostgresVersion("10.23.0");
 
 /// Settings that determine the postgres binary to be fetched
 #[derive(Debug, Clone)]
 pub struct PgFetchSettings {
     /// The repository host
     pub host: String,
-    /// The operation system
+    /// The operating system
     pub operating_system: OperationSystem,
     /// The cpu architecture
     pub architecture: Architecture,
@@ -50,7 +53,7 @@ impl Default for PgFetchSettings {
             host: "https://repo1.maven.org".to_string(),
             operating_system: OperationSystem::default(),
             architecture: Architecture::default(),
-            version: PG_V13,
+            version: PG_V16,
         }
     }
 }
